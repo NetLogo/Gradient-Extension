@@ -1,0 +1,16 @@
+Scale1
+  extensions [gradient]
+  gradient:scale [[0 0 0] [0 0 0] [0 0 0]] 255 255 255 => [0 0 0]
+
+Scale2
+  extensions [gradient]
+  gradient:scale [[255 255 255] [255 255 255] [255 255 255]] 0 0 0 => [255 255 255]
+
+Scale3
+  extensions [gradient]
+  gradient:scale [[255 255 0] [0 255 255] [255 0 255]] 0 0 0 => [255 255 0]
+
+Scale4
+  extensions [gradient]
+  gradient:scale [[255 44 0] [0 255 100] [10 0 150]] 0 255 0 => [9 0 149]
+  
