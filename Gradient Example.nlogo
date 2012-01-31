@@ -1,34 +1,33 @@
 globals [counter start-color end-color]
-extensions [palette]
+extensions [gradient]
 
-; simple use of gradient 
 to simple-gradient
-ca
-ask patches 
+  clear-all
+  ask patches 
   [
-    set pcolor palette:scale-gradient  [  [ 255 0 0 ] [ 0 0 0 ] [0 0 255]] ( pxcor + (pycor * world-width)) 0 (world-width * world-height)
+    set pcolor gradient:scale  [  [ 255 0 0 ] [ 0 0 0 ] [0 0 255]] ( pxcor + (pycor * world-width)) 0 (world-width * world-height)
   ]
 end
 
 to multi-simple-go
-ca
-ask patches
+  clear-all
+  ask patches
   [
     if patch-values? [set plabel ( pxcor + (pycor * 10))]
-    set pcolor palette:scale-gradient  read-from-string multigradient-colors ( pxcor + (pycor * world-width)) 0 (world-width * world-height)
+    set pcolor gradient:scale  read-from-string multigradient-colors ( pxcor + (pycor * world-width)) 0 (world-width * world-height)
   ]
 end
 
 
 to go
-ca
-set start-color (list 0 255 0)
-ask patches ; with [ pxcor > 0 and pycor > 0] 
+  clear-all
+  set start-color (list 0 255 0)
+  ask patches
   [
     if patch-values? [set plabel ( pxcor + (pycor * 10))]
     let color-list1 ( list red-color1 green-color1 blue-color1 )
     let color-list2 ( list red-color2 green-color2 blue-color2 )
-    set pcolor palette:scale-gradient  (list  color-list1 color-list2 ) ( pxcor + (pycor * 10)) 0 256
+    set pcolor gradient:scale  (list  color-list1 color-list2 ) ( pxcor + (pycor * 10)) 0 256
   ]
 end
 
@@ -39,7 +38,7 @@ to set-start-end-colors
   set red-color2 item 0 extract-rgb color2
   set green-color2 item 1 extract-rgb color2
   set blue-color2 item 2 extract-rgb color2
-end 
+end
 @#$#@#$#@
 GRAPHICS-WINDOW
 225
@@ -63,17 +62,10 @@ GRAPHICS-WINDOW
 0
 17
 1
-0
+1
 1
 ticks
-
-CC-WINDOW
-5
-626
-714
-721
-Command Center
-0
+30.0
 
 SLIDER
 51
@@ -180,6 +172,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 BUTTON
 18
@@ -196,6 +189,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 SWITCH
 366
@@ -243,6 +237,7 @@ NIL
 NIL
 NIL
 NIL
+1
 
 INPUTBOX
 16
@@ -280,7 +275,7 @@ Color
 BUTTON
 596
 43
-705
+744
 76
 set-start-end-colors
 set-start-end-colors
@@ -292,54 +287,46 @@ NIL
 NIL
 NIL
 NIL
+1
 
 @#$#@#$#@
-VERSION
--------
-$Header: /home/cvs//netlogo/models/under\040development/code\040examples/Scale-Gradient\040Example.nlogo,v 1.5 2007-07-27 22:39:28 dkor Exp $
+## WHAT IS IT?
 
+This code example demonstrates how the `gradient:scale` primitive works.    
 
-WHAT IS IT?
------------
-This code example demonstrates how the scale-gradient extension works.  
-In this particular example the gradient is taking the value of ( pxcor + (pycor * 10)). This is the sum of a patch's x-coordinate and y-coordinates times ten. As this sum becomes larger the patches color gradates from an initial color to a final color. 
+In this particular example the gradient is taking the value of `pxcor + (pycor * 10)`. 
 
-HOW IT WORKS
-------------
-SCALE-GRADIENT [ [r g b] [r g b]] value range1 range2
+## HOW IT WORKS
 
-	where the first [r g b] list is the initial color
-	and the second [r g b] list is the final color.
+`gradient:scale [[r g b] [r g b]] value range1 range2` where the first [r g b] list is the initial color and the second [r g b] list is the final color.
 
-The syntax and behavior is similar to the SCALE-COLOR primitive otherwise:
+The syntax and behavior is similar to the `scale-color` primitive otherwise.
 
+## HOW TO USE IT
 
-HOW TO USE IT
--------------
-For a smooth transition between colors. Make sure that SCALE-COLOR does not fulfill your needs first. Gradients can be very impressing and aesthetical but hard to understand. Make sure that the starting and ending colors have an intuitive meaning, and that the gradations between them are consistent with that meaning.
+For a smooth transition between colors. Make sure that `scale-color` does not fulfill your needs first. Gradients can be very impressing and aesthetical but hard to understand. Make sure that the starting and ending colors have an intuitive meaning, and that the gradations between them are consistent with that meaning.
 
+## THINGS TO NOTICE
 
-THINGS TO NOTICE
-----------------
 There is a maximum of 256 colors between the start color and the end color.
+
 Note (0, 0) is not in the middle of the world it is in the left bottom part of the world.
 
+## CREDITS AND REFERENCES
 
-CREDITS AND REFERENCES
-----------------------
 Author: Daniel Kornhauser
 
-The gradient is determined using the GradientPaint class from java:
+The gradient is determined using the GradientPaint class from java:  
 http://java.sun.com/j2se/1.4.2/docs/api/java/awt/GradientPaint.html
 
-For a simple tutorial of how GradientPaint works refer to:
+For a simple tutorial of how GradientPaint works refer to:  
 http://www.oreilly.com/catalog/java2d/chapter/ch04.html
 
-For a visualization overview refer to:
-Healey, C. G. "Fundamental Issues of Visual Perception for Effective Image Generation." In SIGGRAPH 99 Course 6:
+For a visualization overview refer to:  
+Healey, C. G. "Fundamental Issues of Visual Perception for Effective Image Generation." In SIGGRAPH 99 Course 6:  
 http://www4.ncsu.edu/~healey/download/sig-course.99.pdf
 
-For a textbook refer to:
+For a textbook refer to:  
 Information Visualization, Second Edition: Perception for Design by Colin Ware
 @#$#@#$#@
 default
@@ -625,7 +612,7 @@ Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 
 @#$#@#$#@
-NetLogo 4.0beta4
+NetLogo 5.0RC7
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
@@ -642,4 +629,6 @@ true
 Line -7500403 true 150 150 90 180
 Line -7500403 true 150 150 210 180
 
+@#$#@#$#@
+0
 @#$#@#$#@
