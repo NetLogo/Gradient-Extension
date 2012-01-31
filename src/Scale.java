@@ -1,3 +1,5 @@
+package org.nlogo.extensions.gradient;
+
 import java.util.ArrayList;
 import java.awt.Color;
 import org.nlogo.api.Argument ;
@@ -8,7 +10,6 @@ import org.nlogo.api.LogoException ;
 import org.nlogo.api.LogoList;
 import org.nlogo.api.LogoListBuilder;
 import org.nlogo.api.Syntax ;
-
 
 public class Scale extends DefaultReporter
 {

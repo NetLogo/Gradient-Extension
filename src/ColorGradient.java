@@ -1,9 +1,11 @@
+package org.nlogo.extensions.gradient;
+
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-public class ColorGradient extends BufferedImage{
+public class ColorGradient extends BufferedImage {
 
 	double[][] GradientRGBArray;
 
