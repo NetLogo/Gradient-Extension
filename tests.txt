@@ -13,4 +13,3 @@ Scale3
 Scale4
   extensions [gradient]
   gradient:scale [[255 44 0] [0 255 100] [10 0 150]] 0 255 0 => [9 0 149]
-  
