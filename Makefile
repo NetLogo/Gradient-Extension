@@ -17,7 +17,7 @@ gradient.jar: $(SRCS) manifest.txt Makefile
 gradient.zip: gradient.jar
 	rm -rf gradient
 	mkdir gradient
-	cp -rp gradient.jar README.md Makefile src manifest.txt gradient
+	cp -rp gradient.jar README.md Makefile src manifest.txt Gradient\ Example.nlogo gradient
 	zip -rv gradient.zip gradient
 	rm -rf gradient
 
