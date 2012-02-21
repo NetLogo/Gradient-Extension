@@ -8,7 +8,7 @@ The following reporter is provided:
 
  * `gradient:scale` _rgb-colors_ _number_ _range1_ _range2_
   * Reports an RGB color proportional to _number_ along a gradient.
-  * _rgb-colors_ should be a list of two RGB colors. An RGB color is a list containing three values between 0 and 255; see the [Programming Guide](http://ccl.northwestern.edu/netlogo/5.0/docs/programming.html) for details.
+  * _rgb-colors_ should be a list of two or more RGB colors. An RGB color is a list containing three values between 0 and 255; see the [Programming Guide](http://ccl.northwestern.edu/netlogo/5.0/docs/programming.html) for details.
   * If _range1_ is less than _range2_, the color will be directly mapped to gradient colors. While, if _range2_ is less than _range1_, the color gradient is inverted. If _number_ is less than _range1_, then the first color of is  _rgb-colors_ is chosen. If _number_ is greater than _range2_, then the last color of is _rgb-colors_ is chosen.
 
 Example usage:
