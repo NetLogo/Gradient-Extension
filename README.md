@@ -2,6 +2,11 @@
 
 This package contains the NetLogo color gradient extension.
 
+## Downloading
+
+snapshot from Jan 31 2012 (c2a167e00), tested with NetLogo 5.0.3:
+https://github.com/downloads/NetLogo/Gradient-Extension/gradient-20120131.zip
+
 ## Using
 
 The following reporter is provided:
@@ -13,7 +18,9 @@ The following reporter is provided:
 
 Example usage:
 
-    ask patches [ set pcolor gradient:scale [[255 0 0] [0 0 255]] pxcor min-pxcor max-pxcor ]`
+    ask patches [
+      set pcolor gradient:scale [[255 0 0] [0 0 255]] pxcor min-pxcor max-pxcor
+    ]
 
 See also the included Gradient Example model.
 
