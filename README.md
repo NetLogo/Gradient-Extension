@@ -5,7 +5,8 @@ This package contains the NetLogo color gradient extension.
 ## Downloading
 
 snapshot from Jan 31 2012 (c2a167e00), tested with NetLogo 5.0.3:
-https://github.com/downloads/NetLogo/Gradient-Extension/gradient-20120131.zip
+
+ * https://github.com/downloads/NetLogo/Gradient-Extension/gradient-20120131.zip
 
 ## Using
 
